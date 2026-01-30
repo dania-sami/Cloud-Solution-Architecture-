@@ -1,6 +1,6 @@
 # Azure Strategy Studio
 
-This project is a premium level interactive cloud storytelling tool built to impress Microsoft recruiters. It shows how I think about cloud architecture, communication, and stakeholder needs in a simple and powerful way.
+This project is a premium level interactive cloud storytelling tool. It shows how I think about cloud architecture, communication, and stakeholder needs in a simple and powerful way.
 
 When you open the project you can switch between different personas like CTO CFO Security Officer or Product Lead. The entire view changes based on what that person actually cares about. This is how real cloud conversations work in the industry and this project shows that I understand that.
 
@@ -16,5 +16,4 @@ https://www.linkedin.com/in/dania-sami-51a829264/
 Email  
 samidania669@gmail.com
 
-Location  
-Stockholm Sweden
+
