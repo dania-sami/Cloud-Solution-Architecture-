@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Azure AI Talking Avatar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="shell">
+    <header class="header">
+      <div class="logo">☁️</div>
+      <div class="title-block">
+        <h1>Azure AI Talking Avatar</h1>
+        <p>A human style avatar that introduces me and talks about the skills for the Microsoft Cloud Solution Architect Intern role</p>
+      </div>
+      <div class="tag-row">
+        <span class="tag">Cloud story</span>
+        <span class="tag accent">Stakeholder focus</span>
+        <span class="tag soft">Made for recruiters</span>
+      </div>
+    </header>
+
+    <main class="layout">
+      <section class="panel left">
+        <h2>Skills for this role</h2>
+        <p class="subtext">
+          These cards match the skills listed in the role description. Click one and the avatar will share how I bring that skill to real work and study.
+        </p>
+
+        <div class="click-guide">
+          <span class="click-arrow">⇢</span>
+          <span class="click-text">Click a card and I will start speaking about that skill</span>
+        </div>
+
+        <div class="skills-grid">
+          <button class="skill-card" data-skill="communication">
+            <div class="skill-title">Communication and presentation</div>
+            <div class="skill-desc">Stories for leaders and teams</div>
+          </button>
+          <button class="skill-card" data-skill="stakeholders">
+            <div class="skill-title">Stakeholder management</div>
+            <div class="skill-desc">Working with senior people and partners</div>
+          </button>
+          <button class="skill-card" data-skill="analytical">
+            <div class="skill-title">Analytical and problem solving</div>
+            <div class="skill-desc">Turning messy situations into clear steps</div>
+          </button>
+          <button class="skill-card" data-skill="cloud">
+            <div class="skill-title">Cloud and architecture</div>
+            <div class="skill-desc">Azure thinking plus Amazon Web Services and security</div>
+          </button>
+          <button class="skill-card" data-skill="learning">
+            <div class="skill-title">Learning and change</div>
+            <div class="skill-desc">Change management and growth mindset</div>
+          </button>
+        </div>
+
+        <div class="tiny-note tiny-note-one">
+          Dear recruiter feel free to click around and make the avatar talk as much as you want
+        </div>
+      </section>
+
+      <section class="panel center">
+        <h2>Talking avatar</h2>
+        <p class="subtext">
+          The avatar is a friendly girl version of me. She starts by saying hello and then talks about the skill you picked in a way that you could use straight in a meeting.
+        </p>
+
+        <div class="avatar-stage">
+          <div class="avatar halo" id="avatar">
+            <div class="avatar-orbit orbit-one"></div>
+            <div class="avatar-orbit orbit-two"></div>
+            <div class="avatar-body">
+              <div class="avatar-hair"></div>
+              <div class="avatar-face">
+                <div class="avatar-eyes">
+                  <div class="eye eye-left"></div>
+                  <div class="eye eye-right"></div>
+                </div>
+                <div class="avatar-mouth" id="avatarMouth"></div>
+                <div class="avatar-cheek cheek-left"></div>
+                <div class="avatar-cheek cheek-right"></div>
+              </div>
+              <div class="avatar-shoulders"></div>
+            </div>
+          </div>
+          <div class="speech" id="speechBubble">
+            <div class="speech-role" id="speechRole">Skill spotlight</div>
+            <div class="speech-text" id="speechText">Tap one of the skill cards and I will introduce myself and tell you a short story.</div>
+          </div>
+        </div>
+
+        <p class="hint">
+          In a real interview this avatar could run in the background while I speak live so you see that I prepared on both the technical side and the human side.
+        </p>
+
+        <div class="tiny-note tiny-note-three">
+          This uses the voice engine in your browser so it should work on any recent device
+        </div>
+      </section>
+
+      <section class="panel right">
+        <h2>What this shows</h2>
+        <ul class="proof-list">
+          <li>I think about the recruiter experience not only my CV</li>
+          <li>I connect job requirements to real moments from my work and study life</li>
+          <li>I care about clear honest communication</li>
+          <li>I enjoy using cloud and AI to make ideas feel alive</li>
+        </ul>
+        <div class="note">
+          If you are still reading this panel it already tells me that you care about communication and presentation as much as I do. Thank you for giving me this moment of attention.
+        </div>
+        <div class="tiny-note tiny-note-four">
+          Small secret I had a lot of fun building this and that is usually a good sign
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
