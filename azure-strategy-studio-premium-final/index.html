@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Azure Cloud Strategy Studio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="header">
+      <div class="logo-mark">☁️</div>
+      <div class="header-text">
+        <h1>Azure Cloud Strategy Studio</h1>
+        <p>A stakeholder aware architecture storytelling tool for SkyShop on Azure</p>
+      </div>
+      <div class="badge-row">
+        <span class="badge">Azure AWS Security</span>
+        <span class="badge accent">Stakeholder storytelling</span>
+      </div>
+    </header>
+
+    <main class="grid">
+      <section class="panel panel-left">
+        <h2>Stakeholders</h2>
+        <p class="panel-sub">Select a persona to adapt the story and the metrics</p>
+        <div class="stakeholder-list" id="stakeholderList"></div>
+      </section>
+
+      <section class="panel panel-center">
+        <h2>Architecture view</h2>
+        <p class="panel-sub">High level Azure design for SkyShop Paths highlight based on priorities</p>
+        <div class="canvas-wrapper">
+          <svg id="archCanvas" viewBox="0 0 800 420" aria-label="Azure architecture canvas">
+            <defs>
+              <linearGradient id="edgeGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.15"/>
+                <stop offset="100%" stop-color="#6366f1" stop-opacity="0.4"/>
+              </linearGradient>
+              <linearGradient id="lineGradient" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.1"/>
+                <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.9"/>
+                <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.1"/>
+              </linearGradient>
+              <filter id="glow">
+                <feGaussianBlur stdDeviation="3" result="blur"/>
+                <feColorMatrix in="blur" type="matrix"
+                  values="0 0 0 0 0.2
+                          0 0 0 0 0.7
+                          0 0 0 0 1
+                          0 0 0 0.7 0"/>
+              </filter>
+            </defs>
+
+            <rect x="40" y="40" width="720" height="340" rx="26" fill="url(#edgeGradient)" opacity="0.45"/>
+            <rect x="60" y="60" width="680" height="300" rx="22" fill="rgba(15,23,42,0.95)" stroke="rgba(148,163,184,0.6)" />
+
+            <g class="node" id="nodeUsers">
+              <rect x="310" y="80" width="180" height="40" rx="18" class="node-bg"/>
+              <text x="400" y="105" text-anchor="middle">Users and Clients</text>
+            </g>
+
+            <g class="node" id="nodeFrontDoor">
+              <rect x="310" y="140" width="180" height="40" rx="18" class="node-bg strong"/>
+              <text x="400" y="165" text-anchor="middle">Azure Front Door</text>
+            </g>
+
+            <g class="node" id="nodeAppService">
+              <rect x="140" y="210" width="160" height="40" rx="18" class="node-bg"/>
+              <text x="220" y="235" text-anchor="middle">App Service</text>
+            </g>
+
+            <g class="node" id="nodeFunctions">
+              <rect x="320" y="210" width="160" height="40" rx="18" class="node-bg"/>
+              <text x="400" y="235" text-anchor="middle">Azure Functions</text>
+            </g>
+
+            <g class="node" id="nodeStaticWeb">
+              <rect x="500" y="210" width="160" height="40" rx="18" class="node-bg"/>
+              <text x="580" y="235" text-anchor="middle">Static Web Apps</text>
+            </g>
+
+            <g class="node" id="nodeSql">
+              <rect x="140" y="280" width="160" height="40" rx="18" class="node-bg db"/>
+              <text x="220" y="305" text-anchor="middle">Azure SQL</text>
+            </g>
+
+            <g class="node" id="nodeCosmos">
+              <rect x="320" y="280" width="160" height="40" rx="18" class="node-bg db"/>
+              <text x="400" y="305" text-anchor="middle">Cosmos DB</text>
+            </g>
+
+            <g class="node" id="nodeStorage">
+              <rect x="500" y="280" width="160" height="40" rx="18" class="node-bg db"/>
+              <text x="580" y="305" text-anchor="middle">Storage</text>
+            </g>
+
+            <g class="node" id="nodeMonitor">
+              <rect x="270" y="340" width="260" height="40" rx="18" class="node-bg strong observability"/>
+              <text x="400" y="365" text-anchor="middle">Azure Monitor and Log Analytics</text>
+            </g>
+
+            <g id="linesLayer">
+              <line id="lineUsersFrontDoor" x1="400" y1="120" x2="400" y2="140" class="line" />
+              <line id="lineFrontDoorAppService" x1="360" y1="180" x2="220" y2="210" class="line" />
+              <line id="lineFrontDoorFunctions" x1="400" y1="180" x2="400" y2="210" class="line" />
+              <line id="lineFrontDoorStatic" x1="440" y1="180" x2="580" y2="210" class="line" />
+
+              <line id="lineAppSql" x1="220" y1="250" x2="220" y2="280" class="line" />
+              <line id="lineFunctionsCosmos" x1="400" y1="250" x2="400" y2="280" class="line" />
+              <line id="lineStaticStorage" x1="580" y1="250" x2="580" y2="280" class="line" />
+
+              <line id="lineSqlMonitor" x1="220" y1="320" x2="320" y2="340" class="line" />
+              <line id="lineCosmosMonitor" x1="400" y1="320" x2="400" y2="340" class="line" />
+              <line id="lineStorageMonitor" x1="580" y1="320" x2="480" y2="340" class="line" />
+            </g>
+          </svg>
+        </div>
+      </section>
+
+      <section class="panel panel-right">
+        <h2 id="personaTitle">Persona CTO</h2>
+        <p id="personaIntro" class="panel-sub"></p>
+
+        <div class="metrics" id="metricsPanel"></div>
+
+        <div class="talk-track">
+          <h3>How to talk to this stakeholder</h3>
+          <ul id="talkTrackList"></ul>
+        </div>
+
+        <div class="cert-row">
+          <span class="cert-label">Certifications to mention</span>
+          <div class="cert-badges" id="certBadges"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
